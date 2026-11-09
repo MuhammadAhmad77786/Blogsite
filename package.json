@@ -1,0 +1,39 @@
+{
+  "name": "snipandprint",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "seed": "node scripts/seed.mjs",
+    "check:db": "node scripts/check-db.mjs",
+    "check:cloudinary": "node scripts/check-cloudinary.mjs"
+  },
+  "dependencies": {
+    "@tiptap/extension-image": "^2.27.3",
+    "@tiptap/extension-link": "^2.27.3",
+    "@tiptap/extension-underline": "^2.27.3",
+    "@tiptap/pm": "^2.27.3",
+    "@tiptap/react": "^2.27.3",
+    "@tiptap/starter-kit": "^2.27.3",
+    "bcryptjs": "^3.0.3",
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.2",
+    "cloudinary": "^2.11.0",
+    "jose": "^6.2.15",
+    "mongoose": "^9.12.0",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18",
+    "sanitize-html": "^2.18.1",
+    "sharp": "^0.35.5",
+    "slugify": "^1.6.9",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35"
+  }
+}
