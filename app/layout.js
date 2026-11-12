@@ -28,8 +28,13 @@ export async function generateMetadata() {
     applicationName: name,
     title: { default: meta.title.absolute, template: `%s | ${name}` },
     formatDetection: { telephone: false },
-    ...(s.analytics?.searchConsoleVerification
-      ? { verification: { google: s.analytics.searchConsoleVerification } }
+    ...(s.analytics?.searchConsoleVerification || s.analytics?.pinterestVerification
+      ? {
+          verification: {
+            ...(s.analytics.searchConsoleVerification ? { google: s.analytics.searchConsoleVerification } : {}),
+            ...(s.analytics.pinterestVerification ? { other: { "p:domain_verify": s.analytics.pinterestVerification } } : {}),
+          },
+        }
       : {}),
   };
 }
@@ -42,7 +47,15 @@ export default async function RootLayout({ children }) {
       <body>
         {children}
         <BootstrapClient />
-        {ga ? (
+        {ga && /^GTM-/i.test(ga) ? (
+          // Google tag / Tag Manager container (GTM-…): the GA4 measurement ID is linked inside it.
+          <>
+            <Script src={`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(ga)}`} strategy="afterInteractive" />
+            <Script id="gtm-init" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});function gtag(){dataLayer.push(arguments);}gtag('js',new Date());`}
+            </Script>
+          </>
+        ) : ga ? (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga)}`} strategy="afterInteractive" />
             <Script id="ga-init" strategy="afterInteractive">

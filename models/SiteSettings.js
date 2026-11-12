@@ -52,6 +52,7 @@ const SiteSettingsSchema = new mongoose.Schema(
     analytics: {
       googleAnalyticsId: { type: String, default: "", maxlength: 40 },
       searchConsoleVerification: { type: String, default: "", maxlength: 200 },
+      pinterestVerification: { type: String, default: "", maxlength: 100 },
     },
     ads: {
       network: { type: String, enum: ["none", "adsense", "ezoic", "medianet"], default: "none" },

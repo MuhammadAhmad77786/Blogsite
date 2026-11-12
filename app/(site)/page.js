@@ -14,7 +14,7 @@ export async function generateMetadata() {
 }
 
 const HERO = {
-  eyebrow: "🎲 Real games, tested by real families",
+  eyebrow: "Real games, tested by real families",
   title: "Fun games for *every occasion.*",
   text: "Simple, no-equipment-needed games for kids, adults, parties, families and friends, with clear rules and free printables so you can start playing in minutes.",
   linkLabel: "Browse all games",
@@ -114,7 +114,7 @@ export default async function HomePage() {
         <Confetti />
         <div className="container bf-hero-grid">
           <div>
-            <span className="bf-kicker">{hero.eyebrow}</span>
+            <span className="bf-kicker"><i className="bi bi-dice-5-fill" aria-hidden="true" />{hero.eyebrow}</span>
             <h1><Headline text={hero.title} /></h1>
             <p className="bf-lede">{hero.text}</p>
             <form className="bf-searchbar" role="search" method="get" action="/search">
@@ -144,9 +144,9 @@ export default async function HomePage() {
               <img className="photo" src={cld(hero.image, 900)} srcSet={`${cld(hero.image, 500)} 500w, ${cld(hero.image, 900)} 900w`} sizes="(min-width: 992px) 440px, 80vw" alt={slide.title ? slide.title.replace(/\*/g, "") : `${name} game`} fetchpriority="high" decoding="async" width={440} height={550} />
             ) : (
               <span className="cards">
-                <span className="gc c1">🎲</span>
-                <span className="gc c2">🎯</span>
-                <span className="gc c3">🎈</span>
+                <span className="gc c1"><i className="bi bi-dice-5-fill" /></span>
+                <span className="gc c2"><i className="bi bi-bullseye" /></span>
+                <span className="gc c3"><i className="bi bi-balloon-fill" /></span>
               </span>
             )}
           </div>
@@ -176,7 +176,7 @@ export default async function HomePage() {
         <section className="bf-section tint" id="fresh">
           <div className="container">
             <SecHead
-              eyebrow="🍂 Just added"
+              eyebrow={<><i className="bi bi-stars" aria-hidden="true" /> Just added</>}
               title="Fresh games"
               sub="The newest games and printables, ready to play."
               link={<Link href="/blog" className="bf-link-arrow">See all games →</Link>}
@@ -237,12 +237,12 @@ export default async function HomePage() {
               {settings.bannerImage?.url ? (
                 <CldImage src={settings.bannerImage.url} alt={`About ${name}`} sizes="(min-width: 768px) 400px, 100vw" widths={[400, 800]} />
               ) : (
-                <div className="ph" aria-hidden="true">🎲</div>
+                <div className="ph" aria-hidden="true"><i className="bi bi-dice-5-fill" /></div>
               )}
             </div>
             <div className="box">
               <span className="bf-eyebrow accent">The people behind the games</span>
-              <h2>Hi, welcome to {name} 👋</h2>
+              <h2>Hi, welcome to {name}</h2>
               <p>{settings.footerBlurb}</p>
               <Link href="/about" className="btn btn-bf-teal">More about us →</Link>
             </div>

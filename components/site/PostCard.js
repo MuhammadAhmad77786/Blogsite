@@ -18,7 +18,7 @@ export default function PostCard({ post, featured = false, pick = false, comment
     <article className={`bf-card${featured ? " bf-featured" : ""}`}>
       <Link href={href} className="bf-card-cover" aria-hidden="true" tabIndex={-1} />
       <div className="bf-card-media">
-        {pick ? <span className="bf-badge pick">★ Pick</span> : isNew ? <span className="bf-badge">New</span> : null}
+        {pick ? <span className="bf-badge pick"><i className="bi bi-star-fill" aria-hidden="true" /> Pick</span> : isNew ? <span className="bf-badge">New</span> : null}
         {post.featuredImage?.url ? (
           <CldImage
             src={post.featuredImage.url}

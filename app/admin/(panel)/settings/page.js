@@ -164,7 +164,9 @@ export default function SettingsPage() {
             <label className="form-label small">Google Analytics ID</label>
             <input className="form-control mb-2" placeholder="G-XXXXXXXXXX" maxLength={40} value={s.analytics?.googleAnalyticsId || ""} onChange={(e) => nest("analytics", "googleAnalyticsId", e.target.value)} />
             <label className="form-label small">Search Console verification code</label>
-            <input className="form-control" placeholder="Only the content value of the meta tag" maxLength={200} value={s.analytics?.searchConsoleVerification || ""} onChange={(e) => nest("analytics", "searchConsoleVerification", e.target.value)} />
+            <input className="form-control mb-2" placeholder="Only the content value of the meta tag" maxLength={200} value={s.analytics?.searchConsoleVerification || ""} onChange={(e) => nest("analytics", "searchConsoleVerification", e.target.value)} />
+            <label className="form-label small">Pinterest verification code</label>
+            <input className="form-control" placeholder="Only the content value of the p:domain_verify tag" maxLength={100} value={s.analytics?.pinterestVerification || ""} onChange={(e) => nest("analytics", "pinterestVerification", e.target.value)} />
           </div>
         </div>
       </div>

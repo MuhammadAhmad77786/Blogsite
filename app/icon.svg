@@ -1,6 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Logo">
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="#f26a21"/>
-  <circle cx="20" cy="20" r="5.5" fill="#fff"/>
-  <circle cx="32" cy="32" r="5.5" fill="#fff"/>
-  <circle cx="44" cy="44" r="5.5" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="No Boring Games logo">
+  <!-- offset shadow -->
+  <rect x="10" y="11" width="44" height="44" rx="10" fill="#1f2430" transform="rotate(-8 32 33)"/>
+  <!-- die -->
+  <g transform="rotate(-8 29 30)">
+    <rect x="7" y="8" width="44" height="44" rx="10" fill="#f26a21" stroke="#1f2430" stroke-width="3"/>
+    <circle cx="18.5" cy="19.5" r="4.6" fill="#fff"/>
+    <circle cx="39.5" cy="19.5" r="4.6" fill="#fff"/>
+    <circle cx="29" cy="30" r="4.6" fill="#fff"/>
+    <circle cx="18.5" cy="40.5" r="4.6" fill="#fff"/>
+    <circle cx="39.5" cy="40.5" r="4.6" fill="#fff"/>
+  </g>
+  <!-- sparkle -->
+  <path d="M53 2.5 Q54.6 9.4 61.5 11 Q54.6 12.6 53 19.5 Q51.4 12.6 44.5 11 Q51.4 9.4 53 2.5Z" fill="#ffc53d" stroke="#1f2430" stroke-width="2" stroke-linejoin="round"/>
 </svg>
